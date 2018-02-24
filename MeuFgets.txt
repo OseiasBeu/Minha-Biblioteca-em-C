@@ -1,0 +1,13 @@
+void meufgets(char *string, int pos)
+{
+	char ch;
+	fgets(string, pos, stdin);
+	strtok(string, "\n");
+
+	if (strlen(string) == pos - 1)
+	{
+		while ((ch = getchar()) != '\n' && ch != EOF);
+	}
+
+
+}

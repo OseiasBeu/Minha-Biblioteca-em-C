@@ -1,0 +1,42 @@
+struct TEMPO 
+{
+	int dia, mes, ano;
+	char nome_mes[5];
+}dma;
+
+ int tempo( int data);
+
+int main()
+{
+	int data; 
+	data = tempo(data);
+	
+
+	system("pause");
+	return 0;
+}
+
+int tempo (int data)
+{
+	
+printf("Digite o periodo pelo qual deseja reservar o carro (DD/MM/AA):");
+do {
+	printf("\nDia:");
+	scanf("%d", &dma.dia);
+} while (dma.dia >31 || dma.dia <0);
+
+do {
+	printf("\nMes:");
+	scanf("%d", &dma.mes);
+} while (dma.mes > 12 || dma.mes < 0);
+
+do {
+	printf("\nAno:");
+	scanf("%d", &dma.ano);
+} while (dma.ano < 2017);
+
+
+ data = printf("%d/%d/%d", dma.dia, dma.mes, dma.ano);
+
+ return data;
+}

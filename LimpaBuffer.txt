@@ -1,0 +1,4 @@
+void limparbufffer(void){
+char clearb;
+while ((clearb = getchar()) != '\n' && clearb != EOF);
+}

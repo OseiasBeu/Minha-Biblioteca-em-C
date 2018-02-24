@@ -1,0 +1,52 @@
+#include "time.h"
+#include "stdio.h"
+#include "stdlib.h"
+
+
+int main()
+{
+	time_t data_tempo;
+
+	time(&data_tempo);
+
+	struct tm *tempo = localtime(&data_tempo);
+	struct tm *data = localtime(&data_tempo);
+	//Tempo do computador no exato momento em que você executar esse sistema.
+
+	printf("\n\t Tempo em segundos: %d", tempo->tm_sec); //Mostra segundos após o minuto.
+
+	printf("\n\tTempo em Minutos: %d", tempo->tm_min);//Mostra minutos após hora.
+
+	printf("\n\t Tempo em Horas: %d", tempo->tm_hour); //Horas desde a meia noite.
+	printf("\n\n-------------------------------------------------------------\n\n");
+
+	printf("\n\t Mostrando a hora atual do computador:");
+	//Mostra a hora atual do seu computador.
+	printf("\n\t Hora exata: %i:%i%i\n", tempo->tm_hour, tempo->tm_min, tempo->tm_sec);
+	printf("\n\n");
+
+	//Data
+	printf("\n\t Dia do mes: %d", data->tm_mday);//Mostra o dia do mês.
+
+	printf("\n\t Mes em que estamos: %d", data->tm_mon + 1);// Mostra o mês em que estamos.
+
+	printf("\n\t Ano em que estamos: %d", data->tm_year + 1990);//Mostra o ano desde 1900.
+
+	printf("\n\t Dia desde domingo: %d", data ->tm_wday);//Mostra dias desde domingo.
+
+	printf("\n\tDia desde janeiro: %d", data->tm_yday);//Mostra o número do dia do ano.
+
+	printf("\n\t Horaio de verao: %d", data->tm_isdst);//Indicador de horario de verão.
+
+	printf("\n\n\n");
+
+	printf("\n\t Dia Mes e Ano: %d/%d/%d", data->tm_yday, data->tm_mday, data->tm_year);
+
+	printf("\n\t Dia Mes e Ano: %d/%d/%d", data->tm_yday, data->tm_mon + 1, data->tm_year);
+
+	printf("\n\t Dia Mes e Ano: %d/%d/%d", data->tm_mday, data->tm_mon + 1, data->tm_year + 1900);
+
+	printf("\n\n");
+	system("pause");
+	return 0;
+}

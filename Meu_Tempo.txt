@@ -1,0 +1,12 @@
+void tempo()
+{
+	//Está função exibe a hora e a data de execução
+	char buffer[80];
+	time_t timer;
+
+	struct tm* tm_info;
+	time(&timer);
+	tm_info = localtime(&timer);
+	strftime(buffer, 25, "%d:%m:%Y \n %H:%M:%S", tm_info);
+	puts(buffer);
+}
